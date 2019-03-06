@@ -1,0 +1,13 @@
+Challenge #1
+
+Challenge #2
+
+The time complexity falls in line with the sorting algorithm in this case. Pythons sort uses Timsort, which has a worst
+case of nlog(n). So the time complexity of the algorithm is nlog(n) as well.
+
+A. Run the program with the --findTrio flag set. This solution is not sustainable for more items however. Say 4 items are
+required, a dynamic programming solution will be more performant. 
+
+B. If the file cannot be loaded into memory, you would hold the best solution in the same way. Then you would have 2
+nested loops, one which opens the file, navigates to the next value that has yet to be used as the first, then the second
+loop would iterate over the remaining values, checking if it forms a better solution and swapping it in if so.
