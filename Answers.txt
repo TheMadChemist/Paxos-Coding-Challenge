@@ -1,5 +1,14 @@
 Challenge #1
 
+A. The application might bottleneck with too many users trying to access it at once. In this case we could provide extra
+machines all hidden behind a load balancer to properly field the incoming requests.
+
+B. Each time the container is built it has to install all of the python packages which dont really change. We could create
+a second container, which would simply contain the dependencies and other rarely changing pieces, and then use this container
+as the base for the microservices container which would prevent that duplicated work. Though as is, docker does cache steps
+and if nothing is changed at that level or below it wont need to run it again. The base container also means that we would be
+able to have multiple containers based off of it, giving us less code duplication.
+
 Challenge #2
 
 The time complexity falls in line with the sorting algorithm in this case. Pythons sort uses Timsort, which has a worst
